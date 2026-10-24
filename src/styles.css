@@ -1,0 +1,198 @@
+/* SchoolSort theme: cool paper, deep teal, functional and calm. */
+
+:root {
+  --paper: #f4f7f6;
+  --card: #ffffff;
+  --ink: #152022;
+  --muted: #5d6b6c;
+  --line: #d7e0de;
+  --accent: #1f5d63;
+  --accent-soft: #e3f0ef;
+  --accent-ink: #ffffff;
+}
+
+body {
+  background:
+    radial-gradient(120% 70% at 50% -10%, #fbfdfd 0%, var(--paper) 60%, #eaf0ef 100%);
+}
+
+.row.between {
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 0 16px;
+}
+
+.file {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.file input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- progress ---------- */
+
+.progress {
+  height: 6px;
+  margin: 4px 0 8px;
+  background: #e4ebe9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.small {
+  font-size: 12.5px;
+}
+
+/* ---------- items ---------- */
+
+.group {
+  margin-bottom: 6px;
+}
+
+.items {
+  display: grid;
+  gap: 8px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 14px 15px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.item:hover {
+  border-color: var(--accent);
+}
+
+.item input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.box {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 1.5px solid #b9c7c5;
+  border-radius: 6px;
+  background: #fff;
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.item input:checked + .box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.item input:checked + .box::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.item input:focus-visible + .box {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.item-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.is-done .item-text {
+  color: #96a3a2;
+  text-decoration: line-through;
+}
+
+.due {
+  align-self: flex-start;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 11.5px;
+  font-weight: 600;
+}
+
+/* ---------- toolbar + paywall ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 6px;
+}
+
+.paywall-card {
+  margin-top: 24px;
+  text-align: left;
+}
+
+.paywall-card h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 21px;
+}
+
+.paywall-card .link {
+  display: block;
+  margin-top: 10px;
+}
+
+.price-line {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.price-line strong {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.price-line span {
+  color: var(--muted);
+  font-size: 14px;
+}
